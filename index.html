@@ -415,6 +415,38 @@ section{padding:104px 0;}
 .story-full p:last-child{margin-bottom:0;}
 @media (max-width:840px){ .stories-grid{grid-template-columns:1fr;} }
 
+/* ===== A-Z guide browser ===== */
+.az-nav{
+  display:flex; flex-wrap:wrap; gap:8px; justify-content:center;
+  margin:0 0 40px;
+}
+.az-letter{
+  width:38px; height:38px; border-radius:50%; border:1.5px solid var(--line);
+  background:var(--cream); color:var(--ink-soft); font-family:'Fraunces',serif; font-weight:600;
+  font-size:0.95rem; cursor:pointer; transition:.2s; display:flex; align-items:center; justify-content:center;
+}
+.az-letter:hover:not(:disabled){border-color:var(--coral); color:var(--ink);}
+.az-letter.active{background:var(--gold); border-color:var(--gold); color:var(--ink);}
+.az-letter:disabled{opacity:0.32; cursor:default;}
+.az-letter.all-letters{width:auto; border-radius:999px; padding:0 18px; font-family:'Inter',sans-serif; font-weight:600; font-size:0.85rem;}
+.guide-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+@media (max-width:840px){ .guide-grid{grid-template-columns:1fr;} }
+.guide-card{display:none;}
+.guide-card.show{display:flex; flex-direction:column;}
+.guide-full{
+  display:none; margin-top:16px; padding-top:16px; border-top:1px solid var(--line);
+  color:var(--ink-soft); font-size:0.95rem; line-height:1.7;
+}
+.guide-full.open{display:block;}
+.guide-full p{margin:0 0 12px;}
+.guide-full p:last-child{margin-bottom:0;}
+.guide-toggle{
+  font-weight:600; color:var(--coral); cursor:pointer; background:none; border:none;
+  font-size:0.85rem; font-family:'Inter',sans-serif; padding:0; margin-top:auto; align-self:flex-start;
+}
+.guide-empty{text-align:center; color:var(--ink-soft); padding:20px 0; display:none;}
+.guide-empty.show{display:block;}
+
 /* ===== Team ===== */
 .team{background:var(--cream);}
 .team-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
@@ -1133,57 +1165,380 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
 
   <section>
     <div class="wrap">
-      <div class="section-head veil">
-        <span class="eyebrow"><span class="dot"></span>For Young People</span>
-        <h2>Free downloads, just for you.</h2>
+      <div class="section-head veil center">
+        <span class="eyebrow"><span class="dot"></span>Parents A-Z Guide</span>
+        <h2>A guide for every letter, for every worry.</h2>
+        <p>Inspired by the structure of established children's mental health guidance, written in our own words. Click a letter to browse topics, or read straight through.</p>
       </div>
-      <div class="grid-3">
-        <div class="card veil">
-          <span class="pill">Ages 10–17</span>
-          <h3>Understanding Your Emotions</h3>
-          <p>A simple, honest guide to what emotions are, why they matter, and what to do when they feel too big. Includes the emotions wheel and grounding techniques.</p>
-          <a class="link" href="#">Download free guide →</a>
-        </div>
-        <div class="card veil">
-          <span class="pill">Ages 13–17</span>
-          <h3>When Anxiety Takes Over</h3>
-          <p>An honest look at anxiety: what it feels like in your body, why your brain does it, and practical strategies that actually work.</p>
-          <a class="link" href="#">Download free guide →</a>
-        </div>
-        <div class="card veil">
-          <span class="pill">Ages 12–17</span>
-          <h3>Talking to Your Parents</h3>
-          <p>It can feel impossible to open up to a parent. This guide helps you think about what to say, how to say it, and what to do if it doesn't go to plan.</p>
-          <a class="link" href="#">Download free guide →</a>
-        </div>
+      <div class="az-nav veil">
+        <button class="az-letter all-letters active" data-letter="all">All</button>
+        <button class="az-letter" data-letter="A">A</button>
+        <button class="az-letter" data-letter="B">B</button>
+        <button class="az-letter" data-letter="C">C</button>
+        <button class="az-letter" data-letter="D">D</button>
+        <button class="az-letter" data-letter="E">E</button>
+        <button class="az-letter" data-letter="F" disabled>F</button>
+        <button class="az-letter" data-letter="G">G</button>
+        <button class="az-letter" data-letter="H" disabled>H</button>
+        <button class="az-letter" data-letter="I">I</button>
+        <button class="az-letter" data-letter="J" disabled>J</button>
+        <button class="az-letter" data-letter="K" disabled>K</button>
+        <button class="az-letter" data-letter="L" disabled>L</button>
+        <button class="az-letter" data-letter="M">M</button>
+        <button class="az-letter" data-letter="N" disabled>N</button>
+        <button class="az-letter" data-letter="O">O</button>
+        <button class="az-letter" data-letter="P">P</button>
+        <button class="az-letter" data-letter="Q" disabled>Q</button>
+        <button class="az-letter" data-letter="R">R</button>
+        <button class="az-letter" data-letter="S">S</button>
+        <button class="az-letter" data-letter="T">T</button>
+        <button class="az-letter" data-letter="U">U</button>
+        <button class="az-letter" data-letter="V" disabled>V</button>
+        <button class="az-letter" data-letter="W">W</button>
+        <button class="az-letter" data-letter="X" disabled>X</button>
+        <button class="az-letter" data-letter="Y" disabled>Y</button>
+        <button class="az-letter" data-letter="Z" disabled>Z</button>
       </div>
-    </div>
-  </section>
-
-  <section class="why">
-    <div class="wrap">
-      <div class="section-head veil">
-        <span class="eyebrow"><span class="dot"></span>For Parents &amp; Carers</span>
-        <h2>Practical guides for the conversations that matter.</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card veil">
-          <span class="pill alt">Parents &amp; carers</span>
-          <h3>What Your Teenager Isn't Telling You</h3>
-          <p>A compassionate guide to the emotional world of adolescents: brain development, what anxiety and low mood look like in teens, and how to open the door.</p>
-          <a class="link" href="#">Download free guide →</a>
+      <div class="guide-grid veil">
+        <div class="guide-card show veil" data-letter="A">
+          <h3>Abuse and Domestic Violence</h3>
+          <p>If you're worried your child has witnessed or experienced abuse, here's what to look for and how to respond.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Abuse can be physical, emotional, sexual, or neglect, and includes children witnessing violence between adults at home, even when it isn't directed at them. It's never the child's fault, and it can affect their mental health both at the time and later in life.</p>
+            <p>If your child tells you something has happened, stay calm, believe them, and let them know it's not their fault. You don't need all the answers straight away, taking the first step to get professional advice is what matters.</p>
+            <p><strong>Where to get help:</strong> If anyone is in immediate danger, call 999. NSPCC (0808 800 5000) supports any adult worried about a child. Refuge (0808 2000 247) and Women's Aid support those experiencing domestic abuse.</p>
+          </div>
         </div>
-        <div class="card veil">
-          <span class="pill alt">Parents &amp; carers</span>
-          <h3>Difficult Conversations With Your Child</h3>
-          <p>How to listen without fixing, respond without shutting down, and stay connected even when your child pulls away.</p>
-          <a class="link" href="#">Download free guide →</a>
+        <div class="guide-card show veil" data-letter="A">
+          <h3>ADHD</h3>
+          <p>Understanding attention, focus, and hyperactivity differences, and how to get an assessment.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>ADHD (Attention Deficit Hyperactivity Disorder) affects how a young person's brain manages attention, impulse control, and activity levels. It's a recognised neurodevelopmental condition, not a discipline problem.</p>
+            <p>A formal diagnosis usually starts with your GP, who can refer your child for an assessment. In the meantime, consistent routines, clear short instructions, and celebrating effort over outcome can make a real difference at home.</p>
+            <p><strong>Where to get help:</strong> Speak to your GP for a referral, or contact CAMHS. YoungMinds and the ADHD Foundation have detailed guidance for families.</p>
+          </div>
         </div>
-        <div class="card veil">
-          <span class="pill alt">Parents &amp; carers</span>
-          <h3>Social Media, Screen Time &amp; Your Teenager</h3>
-          <p>What the research actually says about social media and young people's mental health, and what you can do about it at home.</p>
-          <a class="link" href="#">Download free guide →</a>
+        <div class="guide-card show veil" data-letter="A">
+          <h3>Anger</h3>
+          <p>Why anger shows up so big in young people, and how to respond without escalating it.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Anger in children and teens is often a cover for something underneath, fear, sadness, embarrassment, or feeling unheard. It's a normal emotion, but it can become a problem when it's frequent, intense, or hard to manage safely.</p>
+            <p>Try to stay calm yourself, name the feeling ("it sounds like you're really frustrated") rather than the behaviour, and talk about what happened once everyone's calmer, not in the heat of the moment.</p>
+            <p><strong>Where to get help:</strong> If anger is affecting daily life, your GP or school can refer you to local family support services.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="A">
+          <h3>Anxiety</h3>
+          <p>What anxiety looks like in young people, and practical ways to help without dismissing it.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Anxiety is the body's natural alarm system, but for some young people it fires too often or too intensely, showing up as worry, avoidance, irritability, or physical symptoms like stomach aches.</p>
+            <p>Naming the feeling, staying calm and consistent, and gently encouraging (not forcing) them to face small fears rather than avoid them altogether can help build confidence over time.</p>
+            <p><strong>Where to get help:</strong> If anxiety is affecting school, sleep, or daily life, speak to your GP. YoungMinds' Parents Helpline offers free advice.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="A">
+          <h3>Autism and Mental Health</h3>
+          <p>How autism can affect a young person's mental health, and how to support them well.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Autistic young people experience the world differently, and can be at higher risk of anxiety, low mood, or burnout, especially when masking their autistic traits to fit in.</p>
+            <p>Understanding your child's specific sensory and communication needs, allowing recovery time after demanding situations, and working with, not against, their way of processing the world.</p>
+            <p><strong>Where to get help:</strong> The National Autistic Society offers guidance and a helpline. Your GP can refer for an autism assessment if needed.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="B">
+          <h3>Bullying</h3>
+          <p>Spotting the signs of bullying, and how to support your child through it.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Bullying is repeated, intentional behaviour meant to hurt, exclude, or exert power over someone, in person or online. It can badly affect confidence, school attendance, and mental health.</p>
+            <p>Listen without immediately jumping to solutions, reassure them it's not their fault, and work with the school using their bullying policy. Keep a record of incidents if it continues.</p>
+            <p><strong>Where to get help:</strong> Childline (0800 1111) offers confidential support for young people. The Anti-Bullying Alliance has guidance for parents.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="C">
+          <h3>CAMHS: A Guide for Parents</h3>
+          <p>What CAMHS is, how referrals work, and what to expect from the process.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>CAMHS (Child and Adolescent Mental Health Services) is the NHS service for children and young people with mental health difficulties. Referrals usually come through a GP, school, or sometimes self-referral depending on your area.</p>
+            <p>Ask your GP what the local referral process and waiting times look like. While waiting, early-help services or your child's school pastoral team can often provide interim support.</p>
+            <p><strong>Where to get help:</strong> Start with your GP. YoungMinds has a detailed guide to navigating CAMHS.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="C">
+          <h3>Challenging Behaviour</h3>
+          <p>Understanding what's behind difficult behaviour, and how to respond constructively.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Challenging behaviour is often communication, a young person struggling to express a need, feeling, or difficulty in words, especially under stress.</p>
+            <p>Try to notice patterns (when, where, what happens before), stay calm and consistent with boundaries, and address the underlying feeling rather than only the behaviour itself.</p>
+            <p><strong>Where to get help:</strong> If it's affecting daily life, your GP, school, or a family support service can help identify what's going on underneath.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="C">
+          <h3>Counselling and Therapy</h3>
+          <p>What different types of therapy involve, and how to find the right support.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Therapy can mean different things, from school counselling to CBT (Cognitive Behavioural Therapy) to specialist NHS or private services. The right type depends on what your child is going through.</p>
+            <p>Ask your GP, school, or CAMHS what's available locally and whether there's a waiting list. Some charities offer free or low-cost counselling for young people.</p>
+            <p><strong>Where to get help:</strong> Place2Be provides school-based counselling. Your GP can advise on NHS and low-cost options.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="D">
+          <h3>Depression and Low Mood</h3>
+          <p>Recognising when low mood becomes something more, and how to support your child.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Everyone has low days, but depression is a persistent low mood and loss of interest in things they used to enjoy, and can affect sleep, appetite, and energy for weeks or longer.</p>
+            <p>Keep communication open without pressuring them to "snap out of it," encourage small routines (getting outside, regular meals, sleep), and take it seriously enough to seek professional advice.</p>
+            <p><strong>Where to get help:</strong> Speak to your GP. Samaritans (116 123) offer free 24/7 emotional support for anyone struggling.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="D">
+          <h3>Divorce and Separation</h3>
+          <p>Helping your child cope with family separation in an age-appropriate way.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Family separation is a major life change for a child, and how they're supported through it matters more than the separation itself for their long-term wellbeing.</p>
+            <p>Keep conflict away from your child where possible, reassure them it's not their fault, and try to keep routines (school, friendships, activities) as stable as you can.</p>
+            <p><strong>Where to get help:</strong> Family Lives (0808 800 2222) offers free advice for parents navigating separation.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="D">
+          <h3>Drugs and Alcohol</h3>
+          <p>How to talk to your child about substance use, and where to get specialist support.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Young people may experiment with drugs or alcohol for many reasons, curiosity, peer pressure, or as a way of coping with difficult feelings. It's worth understanding what's driving it, not just the behaviour itself.</p>
+            <p>Approach the conversation with curiosity rather than immediate punishment, stay calm, and ask open questions about what's going on for them.</p>
+            <p><strong>Where to get help:</strong> FRANK (0300 123 6600) offers confidential drug advice for young people and parents.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="E">
+          <h3>Early Help and Early Intervention Services</h3>
+          <p>What early help services are, and how to access support before things escalate.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Early help services are local, often council-run support offered to families before problems become more serious, covering everything from parenting support to emotional wellbeing.</p>
+            <p>Ask your child's school or GP what early help support is available in your area, you often don't need a diagnosis or crisis to access it.</p>
+            <p><strong>Where to get help:</strong> Your local council's website will list early help / family support services in your area.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="E">
+          <h3>Eating Disorders</h3>
+          <p>Recognising early warning signs, and how to approach a sensitive conversation.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Eating disorders are serious mental health conditions that can affect anyone, involving a difficult relationship with food, eating, or body image. They're not a lifestyle choice or about vanity.</p>
+            <p>If you're worried, raise it gently and without judgement, focus on how they're feeling rather than what or how much they're eating, and seek professional support early, early intervention makes a real difference.</p>
+            <p><strong>Where to get help:</strong> Speak to your GP as a first step. The National Alliance for Eating Disorders offers specialist helpline support.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="E">
+          <h3>Exam Time</h3>
+          <p>Supporting your child through exam pressure without adding to the stress.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Exam periods can bring intense pressure, affecting sleep, mood, and anxiety levels, especially for young people who already struggle with perfectionism or worry.</p>
+            <p>Encourage breaks, sleep, and food as much as revision, keep perspective on what exams do and don't determine, and let them know your support isn't conditional on results.</p>
+            <p><strong>Where to get help:</strong> Childline has resources specifically on managing exam stress.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="G">
+          <h3>Gaming</h3>
+          <p>Understanding healthy versus harmful gaming habits, and how to set boundaries.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Gaming is a normal part of many young people's lives and can offer real social connection, but it can also become a way of avoiding difficult feelings or escalate into a harder-to-manage habit.</p>
+            <p>Focus on the function gaming serves for your child (connection, escape, achievement) rather than just the hours, and agree boundaries together rather than imposing them unilaterally where possible.</p>
+            <p><strong>Where to get help:</strong> If gaming is significantly affecting daily life, your GP can advise on further support.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="G">
+          <h3>Getting Support from Mental Health Services</h3>
+          <p>Where to start if you think your child needs professional mental health support.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Navigating mental health services for the first time can feel overwhelming, there are NHS, school, charity, and private routes, and it's not always clear where to begin.</p>
+            <p>Start with your GP or your child's school pastoral lead, both can refer into local services and explain what's realistically available and how long waits might be.</p>
+            <p><strong>Where to get help:</strong> YoungMinds' Parents Helpline (0808 802 5544) can talk you through your options.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="G">
+          <h3>Getting Support from the GP</h3>
+          <p>How to make the most of a GP appointment about your child's mental health.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>GPs are usually the first step into further mental health support for a young person, whether that's a referral, a review, or reassurance.</p>
+            <p>Before the appointment, jot down what you've noticed, when it started, and any changes in behaviour, sleep, or mood, it helps the GP understand the full picture in a short appointment.</p>
+            <p><strong>Where to get help:</strong> Book a routine GP appointment and mention it's about your child's emotional wellbeing when booking.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="G">
+          <h3>Grief and Loss</h3>
+          <p>Supporting a child through bereavement or loss, at their own pace.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Children and teens process grief differently to adults, and can move in and out of grief rather than through it in stages, sometimes appearing fine before it resurfaces later.</p>
+            <p>Be honest and age-appropriate about what's happened, let them ask questions (even the same one repeatedly), and don't rush their timeline for "moving on."</p>
+            <p><strong>Where to get help:</strong> Child Bereavement UK (0800 02 888 40) offers specialist support for grieving children and families.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="I">
+          <h3>Inpatient Care</h3>
+          <p>What it means if your child needs hospital-based mental health treatment.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Inpatient care is used when a young person's mental health needs more intensive, round-the-clock support than can be provided at home, it's relatively rare and used when other support hasn't been enough.</p>
+            <p>Ask the clinical team plenty of questions, stay involved in your child's care plan, and look after your own wellbeing too, this is a difficult time for the whole family.</p>
+            <p><strong>Where to get help:</strong> Your CAMHS team will guide you through this process if it becomes relevant.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="M">
+          <h3>Money and Mental Health</h3>
+          <p>How financial pressure at home can affect young people, and what can help.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Children are often more aware of family financial stress than parents realise, and money worries at home can contribute to anxiety, low mood, or a sense of responsibility that isn't theirs to carry.</p>
+            <p>Age-appropriate honesty, without burdening them with adult decisions, and reassurance that financial stress is a family issue to solve together, not theirs to fix.</p>
+            <p><strong>Where to get help:</strong> Family Lives (0808 800 2222) can offer support and signposting for family financial stress.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="O">
+          <h3>Obsessive-Compulsive Disorder (OCD)</h3>
+          <p>Recognising OCD beyond the stereotypes, and how to respond supportively.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>OCD involves unwanted, intrusive thoughts (obsessions) and repetitive behaviours or mental rituals (compulsions) done to reduce anxiety, it's often misunderstood and more distressing than people assume.</p>
+            <p>Avoid reassuring compulsions too readily as it can reinforce the cycle, stay calm and patient, and support your child in getting a proper assessment rather than trying to manage it alone.</p>
+            <p><strong>Where to get help:</strong> OCD Action offers a helpline and specialist information. Your GP can refer for assessment.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="P">
+          <h3>Parenting with a Mental Health Condition</h3>
+          <p>Looking after your own mental health while supporting your child's.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Parenting with your own mental health condition is common and doesn't make you a bad parent, but it can be hard to know how much to share with your child or how to look after yourself alongside them.</p>
+            <p>Be honest in an age-appropriate way if it feels right, build your own support network, and remember that looking after your own wellbeing is part of looking after theirs.</p>
+            <p><strong>Where to get help:</strong> Family Lives and your GP can point you toward local parent support groups.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="R">
+          <h3>Racism and Mental Health</h3>
+          <p>Understanding the impact of racism on a young person's mental health.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Experiencing or witnessing racism, whether overt or subtle, can have a significant impact on a young person's sense of safety, identity, and mental health, and is sometimes underestimated by adults around them.</p>
+            <p>Take what they share seriously, create space for them to talk about their experiences without minimising them, and connect with their school if it relates to something happening there.</p>
+            <p><strong>Where to get help:</strong> The Diana Award and Show Racism the Red Card offer resources on this issue.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="S">
+          <h3>School Anxiety and Refusal</h3>
+          <p>Understanding why a child might struggle to attend school, and how to help.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>School anxiety and refusal is usually a sign of genuine distress, not defiance, it can stem from bullying, academic pressure, social difficulties, or anxiety unrelated to school itself.</p>
+            <p>Try to understand what specifically feels hard rather than focusing only on attendance, and work with the school's pastoral team on a gradual, supported return rather than an all-or-nothing approach.</p>
+            <p><strong>Where to get help:</strong> Your child's school SENCO or pastoral lead is a good first point of contact, alongside your GP.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="S">
+          <h3>Self-Esteem</h3>
+          <p>Helping your child build a steadier sense of self-worth.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Self-esteem naturally fluctuates during adolescence as young people work out their identity, but persistently low self-esteem can affect relationships, school, and mental health more broadly.</p>
+            <p>Praise effort and character over achievement or appearance, model healthy self-talk yourself, and give them opportunities to build competence in things they enjoy.</p>
+            <p><strong>Where to get help:</strong> YoungMinds has resources specifically on building self-esteem in teens.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="S">
+          <h3>Self-Harm</h3>
+          <p>How to respond if you discover your child is self-harming, calmly and without judgement.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Self-harm is often a way young people cope with overwhelming emotional pain. It's not usually about seeking attention, and it doesn't necessarily mean they want to end their life.</p>
+            <p>Try to respond without shock, anger, or panic, however hard that is. Let them know you're glad they're safe and that you want to understand, then seek professional support together.</p>
+            <p><strong>Where to get help:</strong> If there's immediate risk to life, call 999. Childline (0800 1111) and YoungMinds' Parents Helpline (0808 802 5544) can guide you on next steps.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="S">
+          <h3>Social Media</h3>
+          <p>What the evidence actually says about social media and young people's mental health.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Social media's effect on mental health is genuinely mixed, it can offer connection and community, but also comparison, pressure, and exposure to harmful content, depending heavily on how it's used.</p>
+            <p>Focus on how your child feels after using it, not just how long, and keep an open, curious conversation going rather than only setting rules.</p>
+            <p><strong>Where to get help:</strong> Internet Matters and the UK Safer Internet Centre offer practical guidance for parents.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="S">
+          <h3>Suicidal Thoughts</h3>
+          <p>What to do if you're worried your child is having thoughts of suicide.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Suicidal thoughts in young people are more common than many parents realise, and having them doesn't necessarily mean immediate danger, but they should always be taken seriously and never dismissed.</p>
+            <p>Ask directly and calmly if you're worried, it will not "put the idea in their head." Stay with them, remove access to means of harm where you can, and get professional help urgently.</p>
+            <p><strong>Where to get help:</strong> If there's immediate danger, call 999 or go to A&amp;E. Samaritans (116 123, free, 24/7) and Papyrus HOPELINE247 (0800 068 4141) specialise in supporting under-35s with suicidal thoughts.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="T">
+          <h3>Trans and Non-Binary Mental Health</h3>
+          <p>Supporting a trans or non-binary young person's mental health and wellbeing.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Trans and non-binary young people can face additional mental health pressures, from questioning their identity to how they're treated by others, and having a supportive adult makes a significant difference.</p>
+            <p>Listen without judgement, use the name and pronouns they ask you to, and connect with specialist support if they, or you, want it.</p>
+            <p><strong>Where to get help:</strong> Mermaids offers support for trans, non-binary, and gender-diverse young people and their families.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="T">
+          <h3>Transitions and Times of Change</h3>
+          <p>Helping your child through big changes, like moving school, home, or family structure.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Transitions, new schools, house moves, new siblings, can unsettle even resilient young people, bringing up anxiety or behaviour changes even when the change itself is positive.</p>
+            <p>Talk about what's coming in advance where possible, keep some things consistent during the change, and give extra patience and reassurance while they adjust.</p>
+            <p><strong>Where to get help:</strong> Your child's school pastoral team can support with transitions like starting a new school.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="T">
+          <h3>Trauma</h3>
+          <p>Understanding how trauma can affect a young person, and how to support recovery.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Trauma is the lasting impact of a distressing or frightening experience, and it can affect behaviour, emotions, and relationships well after the event itself, sometimes in ways that aren't obviously connected.</p>
+            <p>Patience, predictability, and safety matter more than "getting over it" quickly. Professional trauma-informed support can make a significant difference.</p>
+            <p><strong>Where to get help:</strong> Your GP can refer for trauma-focused therapy such as CBT or EMDR.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="U">
+          <h3>University and Mental Health</h3>
+          <p>Supporting your child's mental health as they head off to university.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>The transition to university brings independence, new pressures, and reduced day-to-day support from home, all at once, which can be a significant adjustment even for young people who were doing well before.</p>
+            <p>Stay in regular, low-pressure contact, make sure they know how to register with a GP and access university wellbeing services, and let them know it's okay to ask for help.</p>
+            <p><strong>Where to get help:</strong> Most universities have a student wellbeing or counselling service, register with these early rather than waiting for a crisis.</p>
+          </div>
+        </div>
+        <div class="guide-card show veil" data-letter="W">
+          <h3>What To Do When Your Child Is On a Waiting List</h3>
+          <p>How to support your child while waiting for mental health services.</p>
+          <button class="guide-toggle">Read guide →</button>
+          <div class="guide-full">
+            <p>Waiting times for CAMHS and other mental health services can be long, and that gap can feel frightening when your child needs support now.</p>
+            <p>Ask what support is available while you wait, many services offer interim contact, keep a record of any changes so you can update the service, and don't hesitate to flag if things get worse while waiting.</p>
+            <p><strong>Where to get help:</strong> Ask your GP or CAMHS about interim support, and contact YoungMinds' Parents Helpline for advice on navigating waits.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1987,6 +2342,32 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = btn.textContent.startsWith('Read') ? 'Show less ↑' : 'Read the full story →';
     });
   });
+
+  // Guide expand/collapse toggle (used on Resources A-Z guide)
+  document.querySelectorAll('.guide-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const full = btn.closest('.guide-card').querySelector('.guide-full');
+      full.classList.toggle('open');
+      btn.textContent = btn.textContent.startsWith('Read') ? 'Show less ↑' : 'Read guide →';
+    });
+  });
+
+  // A-Z letter filter (used on Resources A-Z guide)
+  const azNav = document.querySelector('.az-nav');
+  if (azNav) {
+    const guideCards = document.querySelectorAll('.guide-card');
+    azNav.querySelectorAll('.az-letter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        azNav.querySelectorAll('.az-letter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const letter = btn.dataset.letter;
+        guideCards.forEach(card => {
+          const show = (letter === 'all') || (card.dataset.letter === letter);
+          card.classList.toggle('show', show);
+        });
+      });
+    });
+  }
 });
 
 
