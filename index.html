@@ -353,6 +353,24 @@ section{padding:104px 0;}
 @media (max-width:980px){ .join-cards{grid-template-columns:1fr 1fr;} }
 @media (max-width:640px){ .join-cards{grid-template-columns:1fr;} }
 
+/* ===== Ways to Get Support (offerings overview) ===== */
+.offerings-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:44px;}
+@media (max-width:980px){ .offerings-grid{grid-template-columns:1fr 1fr;} }
+@media (max-width:640px){ .offerings-grid{grid-template-columns:1fr;} }
+.offering-card{
+  background:var(--cream); border:1px solid var(--line); border-radius:var(--radius-sm);
+  padding:24px 22px; transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.offering-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--gold);}
+.offering-format{
+  display:inline-block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--coral); margin-bottom:10px;
+}
+.offering-card h3{font-size:1.08rem; margin-bottom:8px;}
+.offering-card p{color:var(--ink-soft); font-size:0.92rem; margin:0;}
+.offerings-note{text-align:center; color:var(--ink-soft); margin-top:36px; font-size:0.98rem;}
+.offerings-note a{color:var(--coral); font-weight:600;}
+
 /* ===== Stories / Blog cards ===== */
 .stories{background:var(--paper);}
 .stories-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
@@ -809,7 +827,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
       <div class="section-head veil">
         <span class="eyebrow"><span class="dot"></span>How It Works</span>
         <h2>A safe space for honest conversations.</h2>
-        <p>Unveiled is a safe space (online for now) where young people and parents can be open and honest about what they're really going through. We know young people often struggle in silence. We know parents often don't have the full picture. So we created somewhere both generations can be heard. When families truly understand each other, young people thrive.</p>
+        <p>Unveiled is a safe space, delivered virtually and in person, where young people and parents can be open and honest about what they're really going through. We know young people often struggle in silence. We know parents often don't have the full picture. So we created somewhere both generations can be heard. When families truly understand each other, young people thrive.</p>
       </div>
       <div class="how-steps">
         <div class="how-step veil">
@@ -828,6 +846,55 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
           <p>We connect what's unveiled to the right next step, together, not alone.</p>
         </div>
       </div>
+
+      <div class="section-head veil" style="margin-top:60px;">
+        <span class="eyebrow"><span class="dot"></span>Ways to Get Support</span>
+        <h2>The community is just the start.</h2>
+        <p>Once you're part of Unveiled, there's a range of support underneath it, some virtual, some in person, some just about staying connected. Here's what's available.</p>
+      </div>
+      <div class="offerings-grid">
+        <div class="offering-card veil">
+          <span class="offering-format">Virtual · Group</span>
+          <h3>Young People's Groups</h3>
+          <p>Group sessions for ages 10–13 and 14–17, a space to talk, connect, and be heard by others who get it.</p>
+        </div>
+        <div class="offering-card veil">
+          <span class="offering-format">Virtual · Group</span>
+          <h3>Parent Sessions</h3>
+          <p>Peer support and honest conversation with other parents and carers navigating similar things.</p>
+        </div>
+        <div class="offering-card veil">
+          <span class="offering-format">Virtual · 1:1</span>
+          <h3>Side by Side</h3>
+          <p>More personal, one-to-one style support for a young person who isn't ready for a group setting.</p>
+        </div>
+        <div class="offering-card veil">
+          <span class="offering-format">In Person</span>
+          <h3>Full Court</h3>
+          <p>Basketball-based sessions, building connection and confidence through sport, led by a qualified coach.</p>
+        </div>
+        <div class="offering-card veil">
+          <span class="offering-format">Virtual · Light Touch</span>
+          <h3>Held in the Wait</h3>
+          <p>Gentle, regular contact while you're waiting on CAMHS or another NHS service, so you're not waiting alone.</p>
+        </div>
+        <div class="offering-card veil">
+          <span class="offering-format">Virtual · Practical</span>
+          <h3>Way Finders</h3>
+          <p>Hands-on help navigating referrals, forms, and other services, when Unveiled isn't the right fit alone.</p>
+        </div>
+        <div class="offering-card veil">
+          <span class="offering-format">Optional</span>
+          <h3>Still Waters</h3>
+          <p>Pastoral or prayer support, entirely opt-in and kept separate from the core programme.</p>
+        </div>
+        <div class="offering-card veil">
+          <span class="offering-format">Community</span>
+          <h3>The Unveiled Circle</h3>
+          <p>An ongoing, optional community to stay connected once your formal sessions have ended.</p>
+        </div>
+      </div>
+      <p class="offerings-note">Not sure what's right for you or your family? <a href="javascript:void(0)" data-page="refer">Get in touch</a> and we'll help you find the best fit, together.</p>
     </div>
   </section>
 
@@ -1176,7 +1243,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
       <div class="section-head veil center">
         <span class="eyebrow"><span class="dot"></span>Parents A-Z Guide</span>
         <h2>A guide for every letter, for every worry.</h2>
-        <p>Inspired by the structure of established children's mental health guidance, written in our own words. Click a letter to browse topics, or read straight through.</p>
+        <p>A topic-by-topic guide for parents and carers, written by our team. Click a letter to jump to a topic, or scroll through the whole thing.</p>
       </div>
       <div class="az-nav veil">
         <button class="az-letter all-letters active" data-letter="all">All</button>
@@ -2084,7 +2151,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
       <div id="faq-parents" class="faq-group">
         <div class="accordion-item">
           <button class="accordion-q"><span>Is my child safe in the sessions?</span><span class="plus"></span></button>
-          <div class="accordion-a">Your child's safety is our absolute first priority. All sessions are delivered by DBS-checked, safeguarding-trained facilitators. A minimum of two adults are present at all times. Sessions take place on a secure, password-protected Zoom link. We have a robust Safeguarding Policy which you can read in full on our website.</div>
+          <div class="accordion-a">Your child's safety is our absolute first priority. All sessions are delivered by DBS-checked, safeguarding-trained facilitators. A minimum of two adults are present at all times, whether the session is virtual (on a secure, password-protected Zoom link) or in person at a properly risk-assessed venue. We have a robust Safeguarding Policy which you can read in full on our website.</div>
         </div>
         <div class="accordion-item">
           <button class="accordion-q"><span>Will I be told what my child says in sessions?</span><span class="plus"></span></button>
