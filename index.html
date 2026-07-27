@@ -112,6 +112,14 @@ nav ul a.active{color:var(--ink); font-weight:600;}
   transition:background .2s, transform .2s, box-shadow .2s;
 }
 .nav-cta:hover{background:var(--coral); transform:translateY(-1px); box-shadow:0 8px 18px rgba(221,110,85,0.28);}
+.nav-cta-outline{
+  background:transparent; color:var(--ink); border:1.5px solid var(--ink);
+  padding:8.5px 20px; border-radius:var(--radius-sm); font-size:0.9rem; font-weight:600;
+  transition:background .2s, color .2s, border-color .2s, transform .2s;
+}
+.nav-cta-outline:hover{background:var(--coral); border-color:var(--coral); color:var(--cream); transform:translateY(-1px);}
+.nav-ctas{display:flex; align-items:center; gap:10px;}
+@media (max-width:480px){ .nav-ctas{gap:6px;} .nav-cta-outline, .nav-cta{padding:8px 14px; font-size:0.82rem;} }
 .mobile-toggle{display:block; background:none; border:none; cursor:pointer; padding:6px;}
 .mobile-toggle span{display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; transition:.2s;}
 
@@ -738,7 +746,10 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
         <li><a href="javascript:void(0)" data-page="home" data-anchor="connect">Connect</a></li>
 </ul>
     </nav>
-    <a href="javascript:void(0)" data-page="home" data-anchor="join" class="nav-cta nav-desktop-cta">Join Us</a>
+    <div class="nav-ctas">
+      <a href="javascript:void(0)" data-page="refer" data-anchor="referralForm" class="nav-cta-outline">Refer</a>
+      <a href="javascript:void(0)" data-page="home" data-anchor="join" class="nav-cta nav-desktop-cta">Join Us</a>
+    </div>
   </div>
 
 </header>
@@ -894,7 +905,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
           <p>An ongoing, optional community to stay connected once your formal sessions have ended.</p>
         </div>
       </div>
-      <p class="offerings-note">Not sure what's right for you or your family? <a href="javascript:void(0)" data-page="refer">Get in touch</a> and we'll help you find the best fit, together.</p>
+      <p class="offerings-note">Not sure what's right for you or your family? <a href="javascript:void(0)" data-page="refer" data-anchor="referralForm">Get in touch</a> and we'll help you find the best fit, together.</p>
     </div>
   </section>
 
@@ -925,7 +936,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
           <p>Young people reached</p>
         </div>
       </div>
-      <p class="impact-note">Want to be part of these numbers early? <a href="javascript:void(0)" data-page="home" data-anchor="join" style="color:var(--coral); font-weight:600;">Join the community</a> or <a href="javascript:void(0)" data-page="volunteer" style="color:var(--coral); font-weight:600;">volunteer with us</a>.</p>
+      <p class="impact-note">Want to be part of these numbers early? <a href="javascript:void(0)" data-page="home" data-anchor="join" style="color:var(--coral); font-weight:600;">Join the community</a> or <a href="javascript:void(0)" data-page="volunteer" data-anchor="volunteerForm" style="color:var(--coral); font-weight:600;">volunteer with us</a>.</p>
     </div>
   </section>
 
@@ -1061,7 +1072,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
         <div class="join-card veil">
           <h3>Volunteers</h3>
           <p>Give your time, skills, or energy to help young people and families feel less alone.</p>
-          <a href="javascript:void(0)" data-page="volunteer">Volunteer with us →</a>
+          <a href="javascript:void(0)" data-page="volunteer" data-anchor="volunteerForm">Volunteer with us →</a>
         </div>
       </div>
     </div>
@@ -1121,7 +1132,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
         </div>
       </div>
       <div class="team-note veil">
-        Unveiled is powered by an incredible team of volunteers who give their time, energy, and heart to our community. Interested in joining the team? <a href="javascript:void(0)" data-page="volunteer" style="color:var(--coral); font-weight:600;">Get in touch →</a>
+        Unveiled is powered by an incredible team of volunteers who give their time, energy, and heart to our community. Interested in joining the team? <a href="javascript:void(0)" data-page="volunteer" data-anchor="volunteerForm" style="color:var(--coral); font-weight:600;">Get in touch →</a>
       </div>
     </div>
   </section>
@@ -1219,7 +1230,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
           <div id="checkin-history-list" style="margin-top:12px;"></div>
         </div>
 
-        <p class="checkin-privacy">Your check-in is shared anonymously with the Unveiled team (just your mood, note, and date, never your name) so we can understand how visitors are feeling. If things feel heavy, our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">Resources</a> page has guides that help, and you can always <a href="javascript:void(0)" data-page="home" data-anchor="connect" style="color:var(--coral); font-weight:600;">reach out to the Unveiled team</a> directly.</p>
+        <p class="checkin-privacy">Your check-in is shared anonymously with the Unveiled team (just your mood, note, and date, never your name) so we can understand how visitors are feeling. If things feel heavy, our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">Resources</a> page has guides that help, and you can always <a href="javascript:void(0)" data-page="home" data-anchor="connect" style="color:var(--coral); font-weight:600;">reach out to the Unveiled team</a> directly.</p>
       </div>
     </div>
   </section>
@@ -1238,7 +1249,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
     </div>
   </section>
 
-  <section>
+  <section id="az-guide">
     <div class="wrap">
       <div class="section-head veil center">
         <span class="eyebrow"><span class="dot"></span>Parents A-Z Guide</span>
@@ -1927,7 +1938,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
       <span class="eyebrow"><span class="dot"></span>Blog</span>
       <h1>Insights, stories, and honest conversations.</h1>
       <p class="lede">Articles for young people, parents, and anyone who cares about emotional health. Written by the Unveiled team and our community.</p>
-      <p class="lede" style="margin-top:14px; font-size:1rem;">Looking for practical, topic-by-topic guidance instead, like what to do about anxiety or bullying? That lives in our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">A-Z Guide</a>. Blog posts here are more personal, stories, reflections, and honest takes, and where it's useful, they'll point you to the right guide for the practical detail.</p>
+      <p class="lede" style="margin-top:14px; font-size:1rem;">Looking for practical, topic-by-topic guidance instead, like what to do about anxiety or bullying? That lives in our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">A-Z Guide</a>. Blog posts here are more personal, stories, reflections, and honest takes, and where it's useful, they'll point you to the right guide for the practical detail.</p>
     </div>
   </section>
 
@@ -1964,7 +1975,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
               <li>Focus on having a few people who genuinely respect your no, rather than needing everyone's approval, your brain doesn't need the whole group, it just needs to feel like it has one</li>
             </ul>
             <p>However hard peer pressure feels in the moment, it's not proof that something is wrong with you. It's proof that your brain is doing its ancient job a little too enthusiastically for a modern world. Learning to notice it is genuinely one of the most useful things you can do for yourself as a teenager.</p>
-            <p>If this is something you're finding hard to navigate, our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">Self-Esteem guide</a> in Resources has more on building a steadier sense of who you are, independent of what the group thinks.</p>
+            <p>If this is something you're finding hard to navigate, our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">Self-Esteem guide</a> in Resources has more on building a steadier sense of who you are, independent of what the group thinks.</p>
           </div>
         </div>
         <div class="card">
@@ -1986,7 +1997,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
               <li>Practise the pause in low-stakes moments, so it's more available to you when something actually matters</li>
             </ul>
             <p>You're not going to switch the chimp off, and you don't need to, it's part of a normal, healthy brain. The goal isn't silence, it's noticing when it's driving, and giving your thinking brain just enough time to have a say too.</p>
-            <p>This connects closely to why peer pressure feels so hard to resist, and our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">Anxiety guide</a> in Resources has more on working with big feelings rather than against them.</p>
+            <p>This connects closely to why peer pressure feels so hard to resist, and our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">Anxiety guide</a> in Resources has more on working with big feelings rather than against them.</p>
           </div>
         </div>
         <div class="card">
@@ -2011,7 +2022,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
             </ul>
             <h4>When it's more than quiet</h4>
             <p>Withdrawal from absolutely everyone, not just you, alongside losing interest in things they used to love, is a different picture, and worth a proper conversation with your GP rather than waiting it out. Trust your instinct here, you know your child, and a genuine gut feeling that something's wrong is worth acting on.</p>
-            <p>Whatever kind of quiet you're facing, you're not failing by not having all the answers immediately. Our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">School Anxiety guide</a> in Resources covers related ground, and if you'd like to talk this through with other parents navigating the same thing, our Parent Sessions programme spends a whole week specifically on listening without trying to fix.</p>
+            <p>Whatever kind of quiet you're facing, you're not failing by not having all the answers immediately. Our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">School Anxiety guide</a> in Resources covers related ground, and if you'd like to talk this through with other parents navigating the same thing, our Parent Sessions programme spends a whole week specifically on listening without trying to fix.</p>
           </div>
         </div>
         <div class="card">
@@ -2090,7 +2101,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
               <li>Focus on having a few people who genuinely respect your no, rather than needing everyone's approval, your brain doesn't need the whole group, it just needs to feel like it has one</li>
             </ul>
             <p>However hard peer pressure feels in the moment, it's not proof that something is wrong with you. It's proof that your brain is doing its ancient job a little too enthusiastically for a modern world. Learning to notice it is genuinely one of the most useful things you can do for yourself as a teenager.</p>
-            <p>If this is something you're finding hard to navigate, our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">Self-Esteem guide</a> in Resources has more on building a steadier sense of who you are, independent of what the group thinks.</p>
+            <p>If this is something you're finding hard to navigate, our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">Self-Esteem guide</a> in Resources has more on building a steadier sense of who you are, independent of what the group thinks.</p>
           </div>
         </div>
         <div class="card">
@@ -2112,7 +2123,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
               <li>Practise the pause in low-stakes moments, so it's more available to you when something actually matters</li>
             </ul>
             <p>You're not going to switch the chimp off, and you don't need to, it's part of a normal, healthy brain. The goal isn't silence, it's noticing when it's driving, and giving your thinking brain just enough time to have a say too.</p>
-            <p>This connects closely to why peer pressure feels so hard to resist, and our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">Anxiety guide</a> in Resources has more on working with big feelings rather than against them.</p>
+            <p>This connects closely to why peer pressure feels so hard to resist, and our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">Anxiety guide</a> in Resources has more on working with big feelings rather than against them.</p>
           </div>
         </div>
         <div class="card" style="text-align:center;">
@@ -2144,7 +2155,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
             </ul>
             <h4>When it's more than quiet</h4>
             <p>Withdrawal from absolutely everyone, not just you, alongside losing interest in things they used to love, is a different picture, and worth a proper conversation with your GP rather than waiting it out. Trust your instinct here, you know your child, and a genuine gut feeling that something's wrong is worth acting on.</p>
-            <p>Whatever kind of quiet you're facing, you're not failing by not having all the answers immediately. Our <a href="javascript:void(0)" data-page="resources" style="color:var(--coral); font-weight:600;">School Anxiety guide</a> in Resources covers related ground, and if you'd like to talk this through with other parents navigating the same thing, our Parent Sessions programme spends a whole week specifically on listening without trying to fix.</p>
+            <p>Whatever kind of quiet you're facing, you're not failing by not having all the answers immediately. Our <a href="javascript:void(0)" data-page="resources" data-anchor="az-guide" style="color:var(--coral); font-weight:600;">School Anxiety guide</a> in Resources covers related ground, and if you'd like to talk this through with other parents navigating the same thing, our Parent Sessions programme spends a whole week specifically on listening without trying to fix.</p>
           </div>
         </div>
         <div class="card">
@@ -2757,7 +2768,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
           <a href="javascript:void(0)" data-page="home" data-anchor="join">Join as a young person</a>
           <a href="javascript:void(0)" data-page="events">Events</a>
           <a href="javascript:void(0)" data-page="volunteer">Volunteer With Us</a>
-          <a href="javascript:void(0)" data-page="refer">Refer</a>
+          <a href="javascript:void(0)" data-page="refer" data-anchor="referralForm">Refer</a>
           <a href="javascript:void(0)" data-page="faqs">FAQs</a>
         </div>
         <div class="footer-col">
