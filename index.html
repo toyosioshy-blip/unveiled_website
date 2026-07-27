@@ -2593,7 +2593,7 @@ footer{background:var(--ink); color:rgba(251,246,239,0.7); padding:64px 0 32px;}
         </div>
 
         <div class="form-grid">
-          <div class="form-field"><label>Are parents/carers aware of this referral?</label>
+          <div class="form-field" id="parentsAwareField"><label>Are parents/carers aware of this referral?</label>
             <select name="parents_aware"><option>Yes</option><option>No</option><option>In progress</option></select>
           </div>
           <div class="form-field full">
@@ -2874,9 +2874,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Referral form: show/hide young person fields based on who the referral is for
   const referralFor = document.getElementById('referralFor');
   const ypFields = document.getElementById('ypFields');
+  const parentsAwareField = document.getElementById('parentsAwareField');
   if (referralFor && ypFields) {
     const updateYpFields = () => {
-      ypFields.style.display = (referralFor.value === 'Parent or Carer') ? 'none' : '';
+      const isParentOnly = referralFor.value === 'Parent or Carer';
+      ypFields.style.display = isParentOnly ? 'none' : '';
+      if (parentsAwareField) parentsAwareField.style.display = isParentOnly ? 'none' : '';
     };
     referralFor.addEventListener('change', updateYpFields);
     updateYpFields();
